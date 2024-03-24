@@ -175,6 +175,7 @@ Edge *getMSTprim(Graph *graph, int startVertex)
   }
   // Clean
   deleteHeap(records->heap);
+  free(records->tree);
   free(records->finished);
   free(records->predecessors);
   free(records);
@@ -218,6 +219,8 @@ Edge *getDistanceTreeDijkstra(Graph *graph, int startVertex)
   }
   // just for test
   // printRecords(records);
+  deleteHeap(records->heap);
+  free(records->tree);
   free(records->finished);
   free(records->predecessors);
   free(records);
